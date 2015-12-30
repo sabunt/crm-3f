@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: alex
+  password: qwerty123
+  pool: 5
+
+development:
+  <<: *default
+  database: crm-3f_development
+  username: alex
+  password: qwerty123
+
+test:
+  <<: *default
+  database: crm-3f_test
+  username: alex
+  password: qwerty123
