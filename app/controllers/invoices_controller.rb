@@ -10,7 +10,7 @@ class InvoicesController < ApplicationController
 	      format.html
 	      format.pdf do
 	      
-        	render :pdf => "report", :invoices => 'show.html.slim', encoding: "UTF-8"
+        	render :pdf => "invoices", :invoices => 'show.pdf.slim', encoding: "UTF-8" 
 	      end
 	    end
 

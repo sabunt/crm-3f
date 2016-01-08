@@ -16,15 +16,15 @@ table width="772"
 	        	table.table-bordered
 					
 		              tr
-		                  td.border ИНН 1213123
-		                  td.border КПП 12312312
+		                  td ИНН 1213123
+		                  td КПП 12312312
 		                  td  style="width: 54px;" rowspan="3" valign="bottom" Сч. №
 		                  td  style="width: 218px;" rowspan="3" valign="bottom" 40702801999922211111
 		              tr
 		                  td colspan="2" Получатель</td>
              
               		  tr
-		                  td colspan="2" Натуральный камень ОГРН 123123123
+		                  td width="440" colspan="2" Натуральный камень ОГРН 123123123
 		              tr
 		                  td colspan="2" Банк получателя
 		                  td БИК
@@ -89,7 +89,7 @@ table width="772"
 	                    td.border#text-right -
 	                tr
 	                    td.text-right colspan="5" Всего к оплате:
-	                    td.border#text-right = @invoice.price_total
+	                    td.border#text-right #{@invoice.price_total}  
                 
             
 
