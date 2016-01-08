@@ -12,4 +12,12 @@
 !/log/.keep
 /tmp
 
- 
+ # Игнорирование прочих ненужных файлов.
+ database.yml
+ doc/
+ *.swp
+ *~
+ .project
+ .DS_Store
+ .idea
+ .secret

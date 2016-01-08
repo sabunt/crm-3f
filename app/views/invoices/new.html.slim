@@ -1,0 +1,44 @@
+h1 Новый счет
+= form_for :invoices, url: invoices_path do |f|
+	p Номер 
+	= f.number_field :num
+	p Дата
+	= f.date_field  :date
+	h2 Информация о клиенте
+	p Наименование:
+	= f.text_field :client
+	p ИНН:
+	
+	= f.text_field :client_inn
+	p КПП: 
+	= f.text_field :client_kpp
+	p Адрес: 
+	= f.text_area  :client_adress 
+	p
+	table.table-bordered
+		tbody
+	  		tr.head
+			    td Hаиминование услуги
+			    td К-во			
+			    td Цена
+			    td Сумма
+			    td
+			    br
+	    	tr.item
+	    		td = f.text_field :item_name
+	    		td = f.text_field :unit
+	    		td = f.text_field :price
+	    		td = f.text_field :price_total
+	    		td.del
+	    		br
+			tr.total
+	    		td 
+	    		td 
+	    		td Итого
+	    		td
+	    		td.total_price
+	    		br
+
+	= f.submit 
+
+

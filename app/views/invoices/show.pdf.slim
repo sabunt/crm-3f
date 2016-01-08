@@ -1,0 +1,143 @@
+/ / table
+/ / 	tbody
+/ / 	 tr
+/ 		td 
+/ / 	 	td Счет № 
+/ / 		td  = @invoice.num
+/ / 		td от
+/ / 		td = @invoice.date
+/ / 	br
+/ / 	 tr
+/ 		td.head
+/ / 	 	td Клиент
+/ / 	 	td Hаиминование услуги
+/ / 		td К-во			
+/ / 		td Сумма
+/ / 	 tr
+/ 		td.client
+/ / 	 	td = @invoice.client
+/ / 	 	td = @invoice.item_name
+/ / 	 	td = @invoice.unit
+/ / 	 	td = @invoice.price_total
+
+table width="772"
+	 
+        tr
+	        td
+        tr
+       		td &nbsp;
+
+        tr
+          	td Образец заполнения платежного поручения
+        tr
+       		td &nbsp;
+
+        tr
+          	td
+	        	table.table-bordered
+					
+		              tr
+		                  td.border ИНН 1213123
+		                  td.border КПП 12312312
+		                  td  style="width: 54px;" rowspan="3" valign="bottom" Сч. №
+		                  td  style="width: 218px;" rowspan="3" valign="bottom" 40702801999922211111
+		              tr
+		                  td colspan="2" Получатель</td>
+             
+              		  tr
+		                  td colspan="2" Натуральный камень ОГРН 123123123
+		              tr
+		                  td colspan="2" Банк получателя
+		                  td БИК
+		                  td 049110123
+		              tr
+		                  td colspan="2" Банк Иж
+		                  td Сч. №
+		                  td valign="top" 30192919191919999991
+		              
+		            
+
+        tr
+          	td
+            	h3 СЧЕТ № #{@invoice.num} от #{@invoice.date}
+            	
+        
+        tr
+	        td
+	            img src= "http://lorempixel.com/700/3"
+        
+
+        tr 
+        	td &nbsp;
+
+        tr
+          	td
+            	table
+            		
+	                	                    
+	                	tr
+	                    	td Покупатель: #{@invoice.client}, #{@invoice.client_inn}, #{@invoice.client_kpp}, #{@invoice.client_adress}
+	                    
+
+       
+
+        tr
+          	td
+            	table.table-bordered
+            		
+
+	                tr
+	                    td width="20" №
+	                    td width="340" Наименование товара
+	                    td width="60" Единица изме-рения
+	                    td width="50" Коли-чество
+	                    td width="120" Цена
+	                    td width="120" Сумма
+	                tr
+	                    td 1
+	                    td = @invoice.item_name
+	                    td усл.
+	                    td = @invoice.unit
+	                    td = @invoice.price
+	                    td = @invoice.price_total
+                
+
+	                tr
+	                    td.text-right colspan="5" Итого:
+	                    td.border#text-right = @invoice.price_total
+	                tr
+	                    td.text-right colspan="5"Без налога (НДС)
+	                    td.border#text-right -
+	                tr
+	                    td.text-right colspan="5" Всего к оплате:
+	                    td.border#text-right = @invoice.price_total
+                
+            
+
+        tr
+        	td &nbsp;
+
+        tr
+          	td Всего наименований 1, на сумму =@invoice.price_total            
+          	
+
+        tr
+        	td Ноль рублей 00 копеек
+        tr
+        	td &nbsp;
+
+        tr
+          	td Руководитель предприятия_____________________ (Бунтов А.И.)
+         
+
+        tr
+        	td &nbsp;
+        tr
+        	td &nbsp;
+
+        tr
+          	td Главный бухгалтер_____________________ (Бунтов А.И.)
+      
+
+
+

@@ -1,0 +1,24 @@
+
+h1 Счета
+
+table.table-hover
+	tbody
+		 tr.head
+
+		 	td Клиент
+		 	td Номер счета
+		 	td Дата
+		 	td Сумма
+		 	td
+		 	td
+
+		 tr.client
+		 	- @invoice.each do |invoice|
+			 	td = invoice.client
+			 	td = invoice.num
+			 	td = invoice.date
+			 	td = invoice.price_total
+			 	td = link_to 'Показать', invoice_path(invoice)
+			 	td = link_to 'Cкачать', invoice_path(invoice, :format => 'pdf')
+		 	
+		 	
