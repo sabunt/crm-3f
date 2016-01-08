@@ -8,7 +8,7 @@ gem 'pg', '~> 0.15'
 gem 'bootstrap-sass'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-
+gem 'ru_propisju' 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
