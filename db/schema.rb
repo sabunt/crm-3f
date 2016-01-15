@@ -11,24 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105095331) do
+ActiveRecord::Schema.define(version: 20160111095343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "invoices", force: :cascade do |t|
-    t.integer  "num"
-    t.string   "date"
+  create_table "customers", force: :cascade do |t|
     t.string   "client"
     t.string   "client_inn"
     t.string   "client_kpp"
     t.text     "client_adress"
+    t.string   "client_site"
+    t.string   "client_tel"
+    t.string   "client_email"
+    t.string   "client_ogrn"
+    t.string   "client_ks"
+    t.string   "client_rs"
+    t.string   "client_bik"
+    t.text     "client_bank"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "num"
+    t.string   "date"
+    t.integer  "costumer_id"
     t.string   "item_name"
     t.integer  "unit"
     t.integer  "price"
     t.integer  "price_total"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  add_index "invoices", ["costumer_id"], name: "index_invoices_on_costumer_id", using: :btree
 
 end

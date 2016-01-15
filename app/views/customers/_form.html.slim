@@ -1,0 +1,44 @@
+= form_for @customers do |f|
+
+	- if @customers.errors.any?
+	#error_explanation
+	h2 #{pluralize(@customers.errors.count, "error")} prohibited this customers from being saved
+	    	 
+	ul  
+	- @customers.errors.full_messages.each do |msg|
+	   	li  #{msg}
+	    
+
+	h2 Информация о клиенте
+	p Наименование:
+	= f.text_field :client
+	p Сайт:
+	= f.text_field :client_site
+	p Телефон контактного лица:
+	= f.text_field :client_tel
+	p Email:
+	= f.text_field :client_email
+
+	h2 Реквизиты клиента
+
+
+	p ИНН:
+	= f.text_field :client_inn
+	p КПП: 
+	= f.text_field :client_kpp
+	p ОГРН: 
+	= f.text_field :client_ogrn
+	p Адрес:
+	= f.text_area  :client_adress
+
+	p Кор счет:
+	= f.text_field :client_ks
+	p Расчетный счет:
+	= f.text_field :client_rs 
+	p БИК:
+	= f.text_field :client_bik
+	p Наименование банка:
+	= f.text_area :client_bank
+	
+	= f.submit 
+

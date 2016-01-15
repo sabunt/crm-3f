@@ -1,0 +1,45 @@
+= form_for @invoice do |f|
+
+	- if @invoice.errors.any?
+	#error_explanation
+	h2 #{pluralize(@invoice.errors.count, "error")} prohibited this invoice from being saved
+	    	 
+	ul  = @invoice.errors.full_messages.each do |msg|
+	   	li  #{msg}
+	    
+
+	h2  Номер
+	= f.number_field :num
+	p Дата
+	= f.date_field  :date
+	h2 Информация о клиенте
+	p Наименование:
+	= f.select(:id, Customer.all.map {|c| [c.client, c.id]})  
+	= link_to 'Создать нового клиента', new_customer_path 
+	
+	table.table-bordered
+		tbody
+	  		tr.head
+			    td Hаиминование услуги
+			    td К-во			
+			    td Цена
+			    td Сумма
+			    td
+			    br
+	    	tr.item
+	    		td = f.text_field :item_name
+	    		td = f.text_field :unit
+	    		td = f.text_field :price
+	    		td = f.text_field :price_total
+	    		td.del
+	    		br
+			tr.total
+	    		td 
+	    		td 
+	    		td Итого
+	    		td
+	    		td.total_price
+	    		br
+
+	= f.submit 
+

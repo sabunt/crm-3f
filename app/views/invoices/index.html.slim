@@ -1,9 +1,11 @@
+= link_to 'Новый счет', new_invoice_path 
+
 
 h1 Счета
 
 table.table-hover
-	tbody
-		 tr.head
+	
+		tr.head
 
 		 	td Клиент
 		 	td Номер счета
@@ -11,14 +13,21 @@ table.table-hover
 		 	td Сумма
 		 	td
 		 	td
-
-		 tr.client
-		 	- @invoice.each do |invoice|
-			 	td = invoice.client
+			
+		tr.client 
+		 - @invoice.each do |invoice|
+		 	
+		 	tr   
+			 
+			 	td
 			 	td = invoice.num
 			 	td = invoice.date
 			 	td = invoice.price_total
 			 	td = link_to 'Показать', invoice_path(invoice)
 			 	td = link_to 'Cкачать', invoice_path(invoice, :format => 'pdf')
-		 	
+			 	td = link_to 'Изменить', edit_invoice_path(invoice)
+			 	td = link_to 'Удалить', invoice_path(invoice), method: :delete, data: { confirm: 'Уверены?' }
+  
+
+
 		 	

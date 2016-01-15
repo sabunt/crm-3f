@@ -3,10 +3,7 @@ class CreateInvoices < ActiveRecord::Migration
     create_table :invoices do |t|
       t.integer :num
       t.string :date
-      t.string :client
-      t.string :client_inn
-      t.string :client_kpp
-      t.text :client_adress
+      t.belongs_to :costumer, index: true
       t.string :item_name
       t.integer :unit
       t.integer :price

@@ -1,0 +1,29 @@
+= link_to 'Новый клиент', new_customer_path 
+
+
+h1 Счета
+
+table.table-hover
+	
+		tr.head
+
+		 	td Клиент
+		 	td Телефон
+		 	td Email
+		 	td Сайт
+		 	
+			
+		tr.client 
+		 - @customers.each do |customer|	
+		 	tr
+			 	td = customer.client
+			 	td = customer.client_tel
+			 	td = customer.client_email
+			 	td = customer.client_site
+			 	td = link_to 'Показать', customer_path(customer)
+			 	td = link_to 'Изменить', edit_customer_path(customer)
+			 	td = link_to 'Удалить', customer_path(customer), method: :delete, data: { confirm: 'Уверены?' }
+  
+
+
+		 	
