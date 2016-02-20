@@ -1,32 +1,53 @@
 h1 Клиент № #{@customers.client}
 
 h2 Информация о клиенте
-	tr Наименование
-	td #{@customers.client}
-	tr Сайт
-	td #{@customers.client_site}
-	tr Телефон контактного лица
-	td #{@customers.client_tel}
-	tr Email
-	td #{@customers.client_email}
 
-	h2 Реквизиты клиента
+table.table-bordered
+	tr 
+		td Наименование
+		td #{@customers.client}
+	tr 	
+		td Сайт
+		td #{@customers.client_site}
+	tr 	
+		td Телефон контактного лица
+		td #{@customers.client_tel}
+	tr
+		td Телефон контактного лица
+		td #{@customers.client_name_tel}
+		
+	tr 	
+		td Email
+		td #{@customers.client_email}
 
+h2 Реквизиты клиента
 
-	tr ИНН
-	td #{@customers.client_inn}
-	tr КПП 
-	td #{@customers.client_kpp}
-	tr ОГРН 
-	td #{@customers.client_ogrn}
-	tr Адрес
-	td #{@customers.client_adress}
+table.table-bordered
 
-	tr Кор счет
-	td #{@customers.client_ks}
-	tr Расчетный счет
-	td #{@customers.client_rs} 
-	tr БИК
-	td #{@customers.client_bik}
-	tr Наименование банка
-	td #{@customers.client_bank}
+	tr 	
+		td ИНН
+		td #{@customers.client_inn}
+	tr 
+		td КПП 
+		td #{@customers.client_kpp}
+	tr 
+		td ОГРН 
+		td #{@customers.client_ogrn}
+	tr
+		td Адрес
+		td #{@customers.client_adress}
+
+	tr 
+		td Кор счет
+		td #{@customers.client_ks}
+	tr
+		td Расчетный счет
+		td #{@customers.client_rs} 
+	tr 
+		td БИК
+		td #{@customers.client_bik}
+	tr 
+		td Наименование банка
+		td #{@customers.client_bank}
+
+.btn = link_to 'Вернуться', customers_path

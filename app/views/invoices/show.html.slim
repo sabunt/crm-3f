@@ -38,7 +38,7 @@ table width="772"
 
         tr
           	td
-            	h3 СЧЕТ № #{@invoice.num} от #{@invoice.date}
+            	h3 СЧЕТ № #{@invoice.id} от #{@invoice.created_at.strftime("%d/%m/%Y")}
             	
         
         tr
@@ -55,7 +55,7 @@ table width="772"
             		
 	                	                    
 	                	tr
-	                    	td width="750" Покупатель: #{@customers.client}, ИНН: #{@customers.client_inn}, КПП: #{@customers.client_kpp}, ОГРН: #{@customers.client_ogrn}, Адрес: #{@customers.client_adress}
+	                    	td width="750" Покупатель: #{@invoice.customer.client}, ИНН: #{@invoice.customer.client_inn}, КПП: #{@invoice.customer.client_kpp}, ОГРН: #{@invoice.customer.client_ogrn}, Адрес: #{@invoice.customer.client_adress}
 	                    
 
        

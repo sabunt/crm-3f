@@ -2,13 +2,13 @@ class InvoicesController < ApplicationController
 	def index
     	@invoice = Invoice.all
     	
-  	end
+    end
 	
 	def show
-	    @invoice = Invoice.find(params[:id])
- 		@customers = Customer.find(params[:id])
-	    respond_to do |format|
+		@invoice = Invoice.find(params[:id])
+		  respond_to do |format|
 	      format.html
+
 	      format.pdf do
 	      
         	render :pdf => "invoice", :invoice => 'show.pdf.slim', encoding: "UTF-8" 
@@ -16,18 +16,21 @@ class InvoicesController < ApplicationController
 	    end
 
   	end
+
   	def new
  		@invoice = Invoice.new
  	end
+	
 	def edit
 	  	@invoice = Invoice.find(params[:id])
 	end
 
+
 	def create
-  		@invoice = Invoice.new(invoice_params)
-   		if @invoice.save
-  			redirect_to @invoice
-  		else
+		@invoice = Invoice.new(invoice_params)
+	  		if @invoice.save
+	  		redirect_to @invoice
+	  		else
 	    render 'new'
 	  	end
 	end
@@ -49,7 +52,7 @@ class InvoicesController < ApplicationController
 
 	private
   	def invoice_params
-    	params.require(:invoice).permit(:num, :date, :client_id, :item_name, :unit, :price, :price_total)
+    	params.require(:invoice).permit(:customer_id, :item_name, :unit, :price, :price_total)
   	end
 
 

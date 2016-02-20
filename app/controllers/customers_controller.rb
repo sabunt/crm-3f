@@ -14,6 +14,9 @@ class CustomersController < ApplicationController
 	end
 
 	def create
+
+  		
+
   		@customers = Customer.new(customers_params)
    		if @customers.save
   			redirect_to @customers
@@ -42,7 +45,7 @@ class CustomersController < ApplicationController
 		@customers = Customer.find(params[:id])
 	end
   	def customers_params
-    	params.require(:customer).permit(:client, :client_inn,:client_kpp, :client_adress, :client_site, :client_tel, :client_email, :client_ogrn, :client_ks, :client_rs, :client_bik, :client_bank)
+    	params.require(:customer).permit(:client, :client_name_tel, :client_inn,:client_kpp, :client_adress, :client_site, :client_tel, :client_email, :client_ogrn, :client_ks, :client_rs, :client_bik, :client_bank)
   	end
 
 

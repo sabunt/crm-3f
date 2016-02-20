@@ -1,7 +1,7 @@
 = link_to 'Новый клиент', new_customer_path 
 
 
-h1 Счета
+h1 Клиенты
 
 table.table-hover
 	
@@ -20,6 +20,7 @@ table.table-hover
 			 	td = customer.client_tel
 			 	td = customer.client_email
 			 	td = customer.client_site
+			 	td = link_to 'Новый счет', new_invoice_path
 			 	td = link_to 'Показать', customer_path(customer)
 			 	td = link_to 'Изменить', edit_customer_path(customer)
 			 	td = link_to 'Удалить', customer_path(customer), method: :delete, data: { confirm: 'Уверены?' }

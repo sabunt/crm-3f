@@ -8,13 +8,10 @@
 	   	li  #{msg}
 	    
 
-	h2  Номер
-	= f.number_field :num
-	p Дата
-	= f.date_field  :date
+
 	h2 Информация о клиенте
 	p Наименование:
-	= f.select(:id, Customer.all.map {|c| [c.client, c.id]})  
+	= f.select(:customer_id, Customer.all.map {|c| [c.client, c.id]}) 
 	= link_to 'Создать нового клиента', new_customer_path 
 	
 	table.table-bordered

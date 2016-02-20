@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111095343) do
+ActiveRecord::Schema.define(version: 20160127050258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acceptances", force: :cascade do |t|
+    t.string   "status"
+    t.integer  "invoice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "acceptances", ["invoice_id"], name: "index_acceptances_on_invoice_id", using: :btree
 
   create_table "customers", force: :cascade do |t|
     t.string   "client"
@@ -23,20 +32,19 @@ ActiveRecord::Schema.define(version: 20160111095343) do
     t.text     "client_adress"
     t.string   "client_site"
     t.string   "client_tel"
+    t.string   "client_name_tel"
     t.string   "client_email"
     t.string   "client_ogrn"
     t.string   "client_ks"
     t.string   "client_rs"
     t.string   "client_bik"
     t.text     "client_bank"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "invoices", force: :cascade do |t|
-    t.integer  "num"
-    t.string   "date"
-    t.integer  "costumer_id"
+    t.integer  "customer_id"
     t.string   "item_name"
     t.integer  "unit"
     t.integer  "price"
@@ -45,6 +53,6 @@ ActiveRecord::Schema.define(version: 20160111095343) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "invoices", ["costumer_id"], name: "index_invoices_on_costumer_id", using: :btree
+  add_index "invoices", ["customer_id"], name: "index_invoices_on_customer_id", using: :btree
 
 end

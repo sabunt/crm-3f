@@ -7,6 +7,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.text :client_adress
       t.string :client_site
       t.string :client_tel
+      t.string :client_name_tel
       t.string :client_email
       t.string :client_ogrn
       t.string :client_ks

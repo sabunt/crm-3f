@@ -1,49 +1,14 @@
 
 table width="772"
-	 
-        tr
-	        td
-        tr
-       		td &nbsp;
-
-        tr
-          	td Образец заполнения платежного поручения
-        tr
-       		td &nbsp;
-
-        tr
-          	td
-	        	table.table-bordered
-					
-		              tr
-		                  td ИНН 1213123
-		                  td КПП 12312312
-		                  td  style="width: 54px;" rowspan="3" valign="bottom" Сч. №
-		                  td  style="width: 218px;" rowspan="3" valign="bottom" 40702801999922211111
-		              tr
-		                  td colspan="2" Получатель</td>
-             
-              		  tr
-		                  td width="440" colspan="2" Натуральный камень ОГРН 123123123
-		              tr
-		                  td colspan="2" Банк получателя
-		                  td БИК
-		                  td 049110123
-		              tr
-		                  td colspan="2" Банк Иж
-		                  td Сч. №
-		                  td valign="top" 30192919191919999991
-		              
+              
 		            
 
         tr
           	td
-            	h3 СЧЕТ № #{@invoice.id} от #{@invoice.created_at.strftime("%d/%m/%Y")}
+            	h3 Акт выполенных работ № #{@аcceptance.id} от #{@аcceptance.created_at.strftime("%d/%m/%Y")}
             	
         
-        tr
-	        td
-	            img src= "http://lorempixel.com/710/2"
+      
         
 
         tr 
@@ -106,16 +71,13 @@ table width="772"
         	td &nbsp;
 
         tr
-          	td Руководитель предприятия_____________________ (Бунтов А.И.)
+          	td Выполнил_____________________ (Бунтов А.И.)
          
-
-        tr
-        	td &nbsp;
-        tr
-        	td &nbsp;
-
-        tr
-          	td Главный бухгалтер_____________________ (Бунтов А.И.)
+          	td Прянял_____________________ (#{@customers.client})
+       tr
+          	td МП
+         
+          	td МП
       
 
 

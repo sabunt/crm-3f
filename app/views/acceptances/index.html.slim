@@ -1,0 +1,32 @@
+= link_to 'Новый акт', new_аcceptance_path 
+
+
+h1 Акты
+
+table.table-hover
+	
+		tr.head
+
+		 	td Клиент
+		 	td Номер акта
+		 	td Дата
+		 	td Сумма
+		 	td
+		 	td
+			
+		tr.client 
+		 - @аcceptances.each do |аcceptance|
+		 
+		 	tr    			 
+			 	td 
+			 	td = аcceptance.id
+			 	td = аcceptance.created_at.strftime("%d/%m/%Y")
+			 	td = аcceptance.price_total
+			 	td = link_to 'Показать', invoice_path(аcceptance)
+			 	td = link_to 'Cкачать', invoice_path(аcceptance, :format => 'pdf')
+			 	td = link_to 'Изменить', edit_invoice_path(аcceptance)
+			 	td = link_to 'Удалить', invoice_path(аcceptance), method: :delete, data: { confirm: 'Уверены?' }
+  
+
+
+		 	

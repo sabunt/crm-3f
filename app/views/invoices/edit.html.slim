@@ -1,4 +1,4 @@
-h1 СЧЕТ № #{@invoice.num} от #{@invoice.date}
+h1 СЧЕТ № #{@invoice.id} от #{@invoice.created_at.strftime("%d/%m/%Y")}
 = render 'form'
 
 .btn = link_to 'Вернуться', invoices_path
